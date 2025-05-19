@@ -1,0 +1,502 @@
+:root {
+  --white: #f1ebe3;
+  --blue: #202e50;
+  --teal: #00b4d8;
+  --sandy: #f5e4d7;
+  --coral: #d65a31;
+  --coral-dark: #b04727;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Instrument Serif", serif;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  width: fit-content;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+.navbar-container {
+  max-width: 100rem;
+  margin: auto;
+  padding: 1rem 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-left,
+.nav-right {
+  flex: 1;
+}
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#burger {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+#burger .line {
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: var(--coral);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#burger.open .line1 {
+  transform: translateY(8px) rotate(45deg);
+  transform-origin: center;
+}
+#burger.open .line2 {
+  opacity: 0;
+}
+#burger.open .line3 {
+  transform: translateY(-10px) rotate(-45deg);
+  transform-origin: center;
+}
+
+#navmenu {
+  position: fixed;
+  width: 100%;
+  height: 100svh;
+  background-color: var(--blue);
+  z-index: 98;
+  transition: transform 0.4s ease;
+  transform: translateY(100%);
+}
+
+.navmenu-container {
+  color: var(--sandy);
+  max-width: 100rem;
+  margin: auto;
+  padding: 0rem 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 100%;
+}
+
+.logo-name .brand-name {
+  margin-top: 80px;
+  font-size: 5rem;
+  text-align: center;
+}
+
+.list-image-menu {
+  display: flex;
+  gap: 3rem;
+  height: 100%;
+}
+
+.navmenu-container ul {
+  width: fit-content;
+  font-size: 3rem;
+  font-family: "Instrument Serif", serif;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.navmenu-container ul li {
+  width: fit-content;
+  white-space: nowrap;
+  transition: opacity 0.4s ease;
+  letter-spacing: 2px;
+}
+
+.navmenu-container ul li:hover {
+  color: var(--coral);
+}
+
+.navmenu-container ul:hover li:not(:hover) {
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+
+#menuImg-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+#menuImg-container img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 300px;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+}
+
+#menuImg-container img.show {
+  transform: translateX(0);
+}
+
+#menuImg-container img.hide {
+  transform: translateX(100%);
+}
+
+.primaryBtn {
+  background-color: var(--coral);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  transition: background 0.2s ease;
+}
+
+.primaryBtn:hover {
+  background: var(--coral-dark);
+}
+
+section {
+  background: var(--white);
+}
+
+.hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url("/assets/images/seaview.jpg") no-repeat center/cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 0;
+  text-align: center;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 0;
+  backdrop-filter: brightness(0.65);
+  width: 100%;
+  height: 100%;
+}
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--blue);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.6rem;
+  text-align: center;
+  color: var(--white);
+  max-width: 32ch;
+  font-family: "Instrument Serif", serif;
+}
+
+#brand {
+  font-size: 15rem;
+  margin-top: 20vh;
+  color: var(--white);
+  line-height: 12rem;
+}
+
+.content {
+  padding-top: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+#moto {
+  width: 100%;
+  height: 80svh;
+  background: url("/assets/images/akropolis.jpg") no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.moto-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 5rem;
+  backdrop-filter: brightness(0.65);
+  color: var(--white);
+}
+
+.moto-text h2 {
+  font-size: clamp(2rem, 4vw + 1rem, 4rem);
+  letter-spacing: 2px;
+}
+.moto-text p {
+  font-size: 1.6rem;
+}
+
+.about-container {
+  max-width: 100rem;
+  padding: 200px 1.5rem 100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+}
+
+.about-container p {
+  font-size: 3.4rem;
+  max-width: 50ch;
+  font-family: "Instrument Serif", serif;
+}
+.about-image {
+  position: relative;
+  background-image: url("/assets/images/athensbynight.jpg");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 80svh;
+  width: 100%;
+}
+
+.services-container {
+  padding-bottom: 0 0 100px;
+  margin: auto;
+}
+
+.services-container h2 {
+  margin: 0 auto 100px;
+  text-align: center;
+  max-width: 25ch;
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.services-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service {
+  position: relative;
+  display: flex;
+  height: 130svh;
+}
+
+.service .service-image-container {
+  position: relative;
+  width: 140%;
+}
+
+.service img {
+  object-fit: cover;
+  filter: brightness(0.95);
+  height: 100%;
+  width: 100%;
+}
+
+.service .service-text-container {
+  position: sticky;
+  top: 80px;
+  width: 100%;
+  margin: auto;
+}
+
+.service-text {
+  max-width: 50ch;
+  margin: auto;
+  padding: 20px;
+}
+
+.service-text h3 {
+  font-size: 2.4rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.service-text p {
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+
+#tailor-made {
+  width: 100%;
+  height: 130svh;
+  background: url("/assets/images/beach.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.tailor-made-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 5rem;
+  backdrop-filter: brightness(0.65);
+  color: var(--sandy);
+}
+
+.tailor-made-text h2 {
+  font-size: clamp(2rem, 4vw + 1rem, 4rem);
+  letter-spacing: 2px;
+}
+.tailor-made-text p {
+  font-size: 1.6rem;
+}
+
+.footer {
+  position: relative;
+  z-index: 0;
+  height: 100vh;
+  background: var(--blue);
+  color: var(--sandy);
+}
+
+.footer-container {
+  max-width: 100rem;
+  padding: 80px 1.5rem 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  height: 100%;
+}
+
+.footer-container .brand-name {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.subheader {
+  font-size: 1.6rem;
+  text-align: center;
+  color: var(--white);
+  max-width: 32ch;
+  margin: auto;
+  font-family: "Instrument Serif", serif;
+}
+
+.footer-base {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-base-top {
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
+  border-top: 1px solid;
+  padding: 20px 0;
+}
+
+.footer-base-top p {
+  max-width: 40ch;
+}
+
+.footer-links {
+  display: flex;
+  gap: 4rem;
+}
+
+.footer-links a:hover {
+  color: var(--coral);
+}
+
+.footer-base-bottom {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid;
+  padding: 10px 0 0;
+  font-size: 14px;
+}
+
+.footer-base-bottom div {
+  display: flex;
+  gap: 2rem;
+}
