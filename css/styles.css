@@ -225,7 +225,7 @@ section {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: url("..assets/images/seaview.jpg") no-repeat center/cover;
+  background: url("/nauquest/assets/images/seaview.jpg") no-repeat center/cover;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -285,7 +285,8 @@ section {
 #moto {
   width: 100%;
   height: 80svh;
-  background: url("..assets/images/akropolis.jpg") no-repeat center/cover;
+  background: url("/nauquest/assets/images/akropolis.jpg") no-repeat
+    center/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -329,7 +330,7 @@ section {
 }
 .about-image {
   position: relative;
-  background-image: url("..assets/images/athensbynight.jpg");
+  background-image: url("/nauquest/assets/images/athensbynight.jpg");
   background-size: 80%;
   background-position: center;
   background-repeat: no-repeat;
@@ -402,7 +403,7 @@ section {
 #tailor-made {
   width: 100%;
   height: 130svh;
-  background: url("..assets/images/beach.jpg") center no-repeat;
+  background: url("/nauquest/assets/images/beach.jpg") center no-repeat;
   background-size: cover;
 }
 
