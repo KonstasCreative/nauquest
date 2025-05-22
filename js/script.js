@@ -104,6 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 3) Hook up your blur effects
+  blurOnScroll(".moto-text", {
+    maxBlur: 4,
+    triggerAt: 0.2,
+    minOpacity: 0.4,
+    maxOpacity: 1,
+  });
   blurOnScroll(".footer-container", {
     maxBlur: 4,
     triggerAt: 0.1,
