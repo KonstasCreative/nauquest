@@ -54,7 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadTemplate(svc) {
     const tmpl = svc.querySelector(".sticky-template");
     if (!tmpl) return;
-    stickyText.innerHTML = tmpl.innerHTML;
+    const clone = tmpl.content.cloneNode(true);
+    stickyText.innerHTML = "";
+    stickyText.appendChild(clone);
   }
 
   loadTemplate(currentSvc);
