@@ -112,12 +112,12 @@ document.addEventListener("DOMContentLoaded", () => {
     minOpacity: 0.4,
     maxOpacity: 1,
   });
-  blurOnScroll(".footer-container", {
-    maxBlur: 4,
-    triggerAt: 0.1,
-    minOpacity: 1,
-    maxOpacity: 1,
-  });
+  // blurOnScroll(".footer-container", {
+  //   maxBlur: 4,
+  //   triggerAt: 0.1,
+  //   minOpacity: 1,
+  //   maxOpacity: 1,
+  // });
   blurOnScroll(".about-container p", {
     maxBlur: 4,
     triggerAt: 0.2,
