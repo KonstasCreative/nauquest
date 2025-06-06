@@ -143,7 +143,7 @@ a {
 }
 
 .logo {
-  width: 80px;
+  height: calc(83px - 1rem);
   border: 1px solid var(--white);
   border-top-width: 0;
   padding: 0.25rem;
@@ -552,6 +552,9 @@ section {
   font-size: clamp(2.5rem, 1rem + 4vw, 4rem);
   font-weight: 400;
 }
+.tailor-made-text h2 span {
+  white-space: nowrap;
+}
 .tailor-made-text p {
   font-size: 1.2rem;
 }
@@ -655,9 +658,28 @@ section {
 }
 
 @media (max-width: 768px) {
+  .nav-right {
+    display: none;
+  }
   p,
-  a {
+  a,
+  .tailor-made-text p {
     font-size: 16px;
+  }
+  .footer-container {
+    gap: 2rem;
+  }
+  .footer-base-top {
+    gap: 2rem;
+  }
+  .footer-base-bottom {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+  #konstascreative {
+    text-align: center;
   }
 }
 

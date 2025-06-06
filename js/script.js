@@ -12,16 +12,6 @@ burger.addEventListener("click", function () {
   }
 });
 
-const swiper = new Swiper(".swiper", {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".list-image-menu ul li");
   let activeImg = null;
@@ -46,37 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1) Sticky-text for services (unchanged)
-  const services = document.querySelectorAll(".service");
-  const stickyText = document.getElementById("sticky-text");
-  let currentSvc = services[0];
-
-  function loadTemplate(svc) {
-    const tmpl = svc.querySelector(".sticky-template");
-    if (!tmpl) return;
-    const clone = tmpl.content.cloneNode(true);
-    stickyText.innerHTML = "";
-    stickyText.appendChild(clone);
-  }
-
-  loadTemplate(currentSvc);
-  stickyText.classList.add("fade-in");
-
-  new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting || entry.target === currentSvc) return;
-        stickyText.classList.replace("fade-in", "fade-out");
-        setTimeout(() => {
-          currentSvc = entry.target;
-          loadTemplate(currentSvc);
-          stickyText.classList.replace("fade-out", "fade-in");
-        }, 500);
-      });
-    },
-    { root: null, rootMargin: "-20% 0px -80% 0px", threshold: 0 }
-  ).observeEach(services);
-
   // 2) Generic blur-on-scroll factory
   function blurOnScroll(
     selector,
@@ -125,6 +84,12 @@ document.addEventListener("DOMContentLoaded", () => {
     maxOpacity: 1,
   });
   blurOnScroll(".services-container h2", {
+    maxBlur: 4,
+    triggerAt: 0.2,
+    minOpacity: 0,
+    maxOpacity: 1,
+  });
+  blurOnScroll(".contact-container h2", {
     maxBlur: 4,
     triggerAt: 0.2,
     minOpacity: 0,
