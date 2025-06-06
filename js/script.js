@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   blurOnScroll(".moto-text", {
     maxBlur: 4,
     triggerAt: 0.2,
-    minOpacity: 0.4,
+    minOpacity: 0,
     maxOpacity: 1,
   });
   // blurOnScroll(".footer-container", {
@@ -121,13 +121,13 @@ document.addEventListener("DOMContentLoaded", () => {
   blurOnScroll(".about-container p", {
     maxBlur: 4,
     triggerAt: 0.2,
-    minOpacity: 0.4,
+    minOpacity: 0,
     maxOpacity: 1,
   });
   blurOnScroll(".services-container h2", {
     maxBlur: 4,
     triggerAt: 0.2,
-    minOpacity: 0.4,
+    minOpacity: 0,
     maxOpacity: 1,
   });
 });
