@@ -343,7 +343,7 @@ section {
   font-size: clamp(2rem, 1rem + 4vw, 3.2rem);
   max-width: 50ch;
   font-family: "Instrument Serif", serif;
-  transition: all 1s ease;
+  transition: all 0.3s ease;
 }
 
 .about-image {
@@ -371,7 +371,7 @@ section {
   max-width: 30ch;
   font-size: clamp(2.5rem, 1rem + 4vw, 4rem);
   font-weight: 300;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   padding: 100px 1.5rem;
   letter-spacing: -3px;
 }
@@ -418,7 +418,7 @@ section {
   padding: 20px;
   font-size: 1rem;
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 
 #sticky-text h3 {
@@ -834,7 +834,9 @@ button[type="submit"]:hover {
 .contact-info {
   margin-top: 4rem;
 }
-
+.contact-info a:hover {
+  color: var(--coral);
+}
 @media (max-width: 1100px) {
   .contact-flex {
     flex-direction: column;
